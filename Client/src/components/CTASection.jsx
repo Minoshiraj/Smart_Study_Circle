@@ -1,6 +1,9 @@
 import { ArrowRight, Play } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function CTASection() {
+  const navigate = useNavigate();
+
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Gradient background */}
@@ -25,7 +28,10 @@ export default function CTASection() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-          <button className="inline-flex items-center gap-2 px-8 py-4 text-base font-bold text-teal-600 bg-white rounded-xl hover:bg-teal-50 transition-all duration-200 shadow-lg hover:shadow-xl group">
+          <button 
+            onClick={() => navigate("/login")}
+            className="inline-flex items-center gap-2 px-8 py-4 text-base font-bold text-teal-600 bg-white rounded-xl hover:bg-teal-50 transition-all duration-200 shadow-lg hover:shadow-xl group"
+          >
             Get Started for Free
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </button>
